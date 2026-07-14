@@ -35,6 +35,9 @@ async function request(path, { method = "GET", body } = {}) {
   });
   if (res.status === 401) {
     clearToken();
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new Event("abg-unauthorized"));
+    }
   }
   if (!res.ok) {
     let detail = "";

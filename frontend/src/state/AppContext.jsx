@@ -38,6 +38,16 @@ export function AppProvider({ children }) {
     );
   }, [authed, onboarded, orgMode, userId, username, fullName, organization, role, deviceName, isOrgAdmin]);
 
+  useEffect(() => {
+    const handleUnauthorized = () => {
+      signOut();
+    };
+    window.addEventListener("abg-unauthorized", handleUnauthorized);
+    return () => {
+      window.removeEventListener("abg-unauthorized", handleUnauthorized);
+    };
+  }, []);
+
   /** Called after a successful /auth/login or /auth/register response.
    *  Accepts the full AuthResponse so it can also stash the bearer token. */
   function applyAuthUser(user, accessToken) {
