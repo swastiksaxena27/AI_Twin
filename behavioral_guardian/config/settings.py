@@ -4,9 +4,20 @@ import os
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = PROJECT_ROOT / "data"
-LOGS_DIR = PROJECT_ROOT / "logs"
+
+# Vercel serverless functions run on a read-only filesystem — only /tmp is
+# writable.  When deployed there (VERCEL env var is always set), redirect
+# data and log paths so SQLite, models, and logs can be created.
+_ON_VERCEL = bool(os.environ.get("VERCEL"))
+
+DATA_DIR = Path("/tmp/behavioral_guardian/data") if _ON_VERCEL else PROJECT_ROOT / "data"
+LOGS_DIR = Path("/tmp/behavioral_guardian/logs") if _ON_VERCEL else PROJECT_ROOT / "logs"
 MODELS_DIR = DATA_DIR / "models"
+
+# Ensure directories exist (safe on both local and Vercel).
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
+MODELS_DIR.mkdir(parents=True, exist_ok=True)
 
 # Tests override this via the BEHAVIORAL_GUARDIAN_DATABASE_URL env var so they
 # never read/write the real demo database. Unset in normal/dev use, so this

@@ -1,0 +1,17 @@
+{
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "functions": {
+    "api/index.py": {
+      "runtime": "@vercel/python@4.5.1",
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/api/v1/:path*", "destination": "/api/index.py" },
+    { "source": "/health",        "destination": "/api/index.py" },
+    { "source": "/docs",          "destination": "/api/index.py" },
+    { "source": "/openapi.json",  "destination": "/api/index.py" },
+    { "source": "/(.*)",          "destination": "/index.html"   }
+  ]
+}
