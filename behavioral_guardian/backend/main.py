@@ -25,10 +25,18 @@ app.add_middleware(
 )
 
 
+# Initialize database at import time to ensure tables are created
+# in serverless environments where startup/lifespan events are bypassed.
+try:
+    init_db()
+    logger.info("Database initialized successfully at startup")
+except Exception as e:
+    logger.error("Failed to initialize database at startup: %s", e)
+
+
 @app.on_event("startup")
 def on_startup() -> None:
-    """Initialize database on startup."""
-    init_db()
+    """Startup event (kept for compatibility)."""
     logger.info("Backend started")
 
 
