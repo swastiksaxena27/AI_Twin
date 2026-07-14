@@ -1,0 +1,45 @@
+{
+  "feature_names": [
+    "ks_dwell_mean",
+    "ks_dwell_std",
+    "ks_flight_mean",
+    "ks_flight_std",
+    "ks_wpm",
+    "ks_error_rate",
+    "ms_speed_mean",
+    "ms_speed_std",
+    "ms_click_rate",
+    "ms_idle_ratio",
+    "ap_unique_count",
+    "ap_unknown_flag"
+  ],
+  "mean": {
+    "ks_dwell_mean": 0.0,
+    "ks_dwell_std": 0.0,
+    "ks_flight_mean": 0.0,
+    "ks_flight_std": 0.0,
+    "ks_wpm": 0.0,
+    "ks_error_rate": 0.0,
+    "ms_speed_mean": 0.0,
+    "ms_speed_std": 0.0,
+    "ms_click_rate": 0.0,
+    "ms_idle_ratio": 0.0,
+    "ap_unique_count": 0.0,
+    "ap_unknown_flag": 0.0
+  },
+  "std": {
+    "ks_dwell_mean": 0.0,
+    "ks_dwell_std": 0.0,
+    "ks_flight_mean": 0.0,
+    "ks_flight_std": 0.0,
+    "ks_wpm": 0.0,
+    "ks_error_rate": 0.0,
+    "ms_speed_mean": 0.0,
+    "ms_speed_std": 0.0,
+    "ms_click_rate": 0.0,
+    "ms_idle_ratio": 0.0,
+    "ap_unique_count": 0.0,
+    "ap_unknown_flag": 0.0
+  },
+  "sample_count": 20
+}

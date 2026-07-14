@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Runtime data — DB, logs, trained models, and the agent's cached device
+# token all get generated locally and should never be committed.
+behavioral_guardian/data/*.db
+behavioral_guardian/data/.agent_session.json
+behavioral_guardian/logs/*.log
+behavioral_guardian/models/*.pkl
+
+.env

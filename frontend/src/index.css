@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  background-color: #0a0c16;
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+* { box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0a0c16; }
+::-webkit-scrollbar-thumb { background: #1e2240; border-radius: 4px; }
+
+.card {
+  background: #0f1120;
+  border: 1px solid #1e2240;
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+.card-label {
+  font-size: 10.5px;
+  color: #4a5280;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.row-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid #1e2240;
+  font-size: 12.5px;
+}
+.row-line:last-child { border-bottom: none; }
+
+.pill {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+.pill-green  { background:#052e16; color:#4ade80; border:1px solid #166534; }
+.pill-yellow { background:#3a2a05; color:#fbbf24; border:1px solid #78350f; }
+.pill-red    { background:#3b0a0a; color:#f87171; border:1px solid #7f1d1d; }
+.pill-blue   { background:#1e1b4b; color:#a5b4fc; border:1px solid #4338ca; }
+
+.btn-primary {
+  background: #6d5ef9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px 18px;
+  transition: background .15s;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #4338ca; }
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid #1e2240;
+  color: #e2e8f0;
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-ghost:hover { background: #141733; }
+
+.input-field {
+  background: #0d0f1f;
+  border: 1px solid #1e2240;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  width: 100%;
+  outline: none;
+}
+.input-field:focus { border-color: #6d5ef9; }
